@@ -8,17 +8,18 @@ while True:
         case "add":
             todo = input("Enter todo")
             todos.append(todo)
-
         case "show":
-            for todo in todos:
+            for index,todo in enumerate(todos):
                 todo = todo.title()
-                print(todo)
+                print(f"{index+1} - {todo}")
         case "edit":
             number = int(input("Number of todo to edit: "))
             number = number -1
             new_todo = input("Enter todo: ")
             todos[number] = new_todo
-
+        case "complete":
+            number = int(input("Enter number of todo to complete"))
+            todos.pop(number - 1)
         case "exit":
             break
 
