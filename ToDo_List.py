@@ -1,8 +1,20 @@
-enter_todo = "Enter a todo"
-
 todos = []
 
 while True:
-    todo = input(enter_todo)
-    todos.append(todo)
-    print(todo)
+    user_input = input("Type add, show or exit")
+    user_input = user_input.strip()
+
+    match user_input:
+        case "add":
+            todo = input("Enter todo")
+            todos.append(todo)
+
+        case "show":
+            for todo in todos:
+                todo = todo.title()
+                print(todo)
+
+        case "exit":
+            break
+
+print("Bye!")
