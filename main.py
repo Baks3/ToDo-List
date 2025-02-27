@@ -1,6 +1,11 @@
 import ToDo_Functions as TDF
+from colorama import Fore, Style
+
+
 
 def main():
+    print(Fore.CYAN + "Welcome to your Awesome Todo List!" + Style.RESET_ALL)
+    
     while True:
         todos = TDF.read_todos()
 
