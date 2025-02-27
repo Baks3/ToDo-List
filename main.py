@@ -18,7 +18,7 @@ def main():
                     todos.append(todo + "\n")
                     TDF.write_todos(todos)
                 else:
-                    print("Todo cannot be empty.")
+                    print(Fore.RED + "Todo cannot be empty!" + Style.RESET_ALL)
 
             case "show":
                 TDF.show_todos(todos)
@@ -34,9 +34,9 @@ def main():
                         else:
                             print("New todo cannot be empty.")
                     else:
-                        print("Invalid todo number.")
+                        print(Fore.RED + "Invalid number." + Style.RESET_ALL)
                 except ValueError:
-                    print("Please enter a valid number.")
+                    print(Fore.RED + "Please enter a valid number." + Style.RESET_ALL)
 
             case "complete":
                 try:
@@ -45,16 +45,16 @@ def main():
                         todos.pop(number - 1)
                         TDF.write_todos(todos)
                     else:
-                        print("Invalid todo number.")
+                        print(Fore.RED + "Invalid todo number." + Style.RESET_ALL)
                 except ValueError:
-                    print("Please enter a valid number.")
+                    print(Fore.RED + "Please enter a valid number." + Style.RESET_ALL)
 
             case "exit":
-                print("Bye!")
+                print(Fore.MAGENTA + "Bye! Come back soon!" + Style.RESET_ALL)
                 break
 
             case _:
-                print("Invalid input. Please try again.")
+                print(Fore.RED + "Invalid option, try again!" + Style.RESET_ALL)
 
 
 if __name__ == "__main__":
